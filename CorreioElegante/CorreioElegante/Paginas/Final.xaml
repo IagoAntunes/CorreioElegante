@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CorreioElegante.Paginas.Final"
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Image HorizontalOptions="Center" VerticalOptions="Start" Source="Check3.png" />
+            <Label Text="Seu correio foi enviado com sucesso" TextColor="Black" FontAttributes="Bold"
+                   HorizontalOptions="Center" FontSize="32" HorizontalTextAlignment="Center"/>
+
+            <Frame BackgroundColor="#B73058" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                   HeightRequest="400" WidthRequest="300" CornerRadius="30" BorderColor="Black"
+                   x:Name="frameCarta">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="De: Admirador Secreto" TextColor="White" FontSize="30" Grid.Row="0"/>
+                    <Label Text="Para: Você" TextColor="White" FontSize="20" Grid.Row="1"/>
+                    <StackLayout  Grid.Row="2" VerticalOptions="Center">
+                        <Label Text="Mensagem:" TextColor="White" FontSize="16"/>
+                        <Label Text="adwdawdawdwdwdawdawawwdawdwaawdawdwwdwadawdawdawdwawd:" TextColor="White" x:Name="lblMensagem"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="3" x:Name="imagemAqui">
+                        <Label Text="Itens recebidos:" TextColor="White" FontSize="16"/>
+                    </StackLayout>
+                </Grid>
+
+            </Frame>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

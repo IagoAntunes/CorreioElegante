@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CorreioElegante.Paginas.TelaCarregar">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <Image Source="LogoDev2"/>
+            <ProgressBar Progress="0.2" x:Name="Bar1" ProgressColor="#B73058" WidthRequest="300"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CorreioElegante.Paginas.Cadastro">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout HeightRequest="150" BackgroundColor="#B73058" >
+                <StackLayout Padding="30" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                    <Label Text="Você gostaria de se identificar?" TextColor="White" FontSize="18" FontAttributes="Bold"
+                           HorizontalTextAlignment="Start"/>
+                    <Frame BackgroundColor="White" CornerRadius="10" Margin="0" Padding="5">
+                        <Entry Placeholder="Digite seu nome ou apelido"   BackgroundColor="Transparent" WidthRequest="300" />
+                    </Frame>
+
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <StackLayout Padding="30" HeightRequest="500">
+                    <Label Text="Escolha uma refeição abaixo" TextColor="Black" HorizontalTextAlignment="Start"
+                           FontSize="25" FontAttributes="Bold"/>
+                    <Grid HeightRequest="100">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <ImageButton BackgroundColor="#dcdcdc" Grid.Column="0" Source="FastFoodDev2" CornerRadius="10" Padding="15"
+                                     Clicked="img1Change" x:Name="img1"/>
+                        <ImageButton BackgroundColor="#dcdcdc" Grid.Column="1" Source="WineDev2" CornerRadius="10" Padding="15"
+                                     Clicked="img2Change" x:Name="img2"/>
+                        <ImageButton BackgroundColor="#dcdcdc" Grid.Column="2" Source="BeerDev2" CornerRadius="10"  Padding="15"
+                                     Clicked="img3Change" x:Name="img3"/>
+                    </Grid>
+                    <StackLayout>
+                        <Label Text="Email" TextColor="Black" HorizontalTextAlignment="Start"
+                           FontSize="25" FontAttributes="Bold"/>
+                        <Frame Padding="0" BackgroundColor="Transparent" BorderColor="#B73058" CornerRadius="10" >
+                            <Entry Placeholder="Digite o email dele ou dela" x:Name="entryEmail"/>
+                        </Frame>
+
+                        <Label Text="Surpreenda" TextColor="Black" HorizontalTextAlignment="Start"
+                           FontSize="25" FontAttributes="Bold"/>
+                        <Frame Padding="0" BackgroundColor="Transparent" BorderColor="#B73058" CornerRadius="10">
+                            <Editor Placeholder="Solte o verbo para seu/sua amado(a)"  HeightRequest="100" Keyboard="Chat" x:Name="entryMensagem"/>
+                        </Frame>
+                    </StackLayout>
+                    <Button Text="Enviar Correio" TextColor="White" FontSize="20" FontAttributes="Bold"
+                        WidthRequest="300" HeightRequest="60"
+                        BackgroundColor="#B73058" CornerRadius="20"
+                        HorizontalOptions="Center" VerticalOptions="EndAndExpand"
+                            Clicked="Cadastrar"/>
+                </StackLayout>
+
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
