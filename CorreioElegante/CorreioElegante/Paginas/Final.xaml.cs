@@ -12,13 +12,23 @@ namespace CorreioElegante.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Final : ContentPage
     {
-        public Final(string email,string mensagem,List<int> carrinho)
+        public Final(string email,string mensagem,List<int> carrinho,String nome)
         {
             InitializeComponent();
             lblMensagem.Text = mensagem;
-            //TabelaItens(carrinho);
-            //RetornarHomeAsync();
+            alteraNome(nome.Trim());
+            TabelaItens(carrinho);
+            RetornarHomeAsync();
         }
+        private void alteraNome(string nome)
+        {
+            alteraAdmirador(char.ToUpper(nome[0]) + nome.Substring(1));
+        }
+        private void alteraAdmirador(string nome)
+        {
+            Proprietario.Text = string.Format("De: {0}",nome);
+        }
+
         private async Task RetornarHomeAsync()
         {
             await Task.Delay(5000);
@@ -26,34 +36,32 @@ namespace CorreioElegante.Paginas
         }
         private void TabelaItens(List<int> items)
         {
-            imagemAqui = new StackLayout
-            { 
-                BackgroundColor = Color.Blue,
-                Children =
-                {
-                    
-                }
-            };
             foreach(var item in items)
             {
                 if(item == 0)
                 {
-                    new Image
+
+                    boxImage.Children.Add(new Image
                     {
-                        Source = "FastFoodDev2"
-                    };
+                        Source = "FastFoodDev2.png"
+                    });
+
                 }
-                if(item == 1)
+                if (item == 1)
                 {
-                    principal.Children.Add(
-                        new Image
-                        {
-                            Source = "WineDev2"
-                        }
-                    );
+                    boxImage.Children.Add(new Image
+                    {
+                        Source = "WineDev2.png"
+                    });
+                }
+                if (item == 2)
+                {
+                    boxImage.Children.Add(new Image
+                    {
+                        Source = "BeerDev2.png"
+                    });
                 }
             }
-            Content = principal;
         }
     }
 }

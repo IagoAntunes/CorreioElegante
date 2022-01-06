@@ -20,15 +20,24 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Text="De: Admirador Secreto" TextColor="White" FontSize="30" Grid.Row="0"/>
+                    <Label Text="De: Admirador Secreto" TextColor="White" FontSize="30" Grid.Row="0" x:Name="Proprietario"/>
                     <Label Text="Para: Você" TextColor="White" FontSize="20" Grid.Row="1"/>
                     <StackLayout  Grid.Row="2" VerticalOptions="Center">
-                        <Label Text="Mensagem:" TextColor="White" FontSize="16"/>
-                        <Label Text="adwdawdawdwdwdawdawawwdawdwaawdawdwwdwadawdawdawdwawd:" TextColor="White" x:Name="lblMensagem"/>
+                        <Label Text="Mensagem:" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                        <Label TextColor="White" x:Name="lblMensagem"/>
                     </StackLayout>
-                    <StackLayout Grid.Row="3" x:Name="imagemAqui">
-                        <Label Text="Itens recebidos:" TextColor="White" FontSize="16"/>
-                    </StackLayout>
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="90"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Itens recebidos:" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                        <Frame Grid.Row="1" BackgroundColor="White"  Padding="5" CornerRadius="10" BorderColor="Black">
+                            <StackLayout x:Name="boxImage" Orientation="Horizontal" Padding="5">
+                            
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
                 </Grid>
 
             </Frame>

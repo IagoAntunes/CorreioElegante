@@ -9,7 +9,7 @@
                     <Label Text="Você gostaria de se identificar?" TextColor="White" FontSize="18" FontAttributes="Bold"
                            HorizontalTextAlignment="Start"/>
                     <Frame BackgroundColor="White" CornerRadius="10" Margin="0" Padding="5">
-                        <Entry Placeholder="Digite seu nome ou apelido"   BackgroundColor="Transparent" WidthRequest="300" />
+                        <Entry Placeholder="Digite seu nome ou apelido"   BackgroundColor="Transparent" WidthRequest="300" x:Name="entryNome" />
                     </Frame>
 
                 </StackLayout>
@@ -51,7 +51,7 @@
                         WidthRequest="300" HeightRequest="60"
                         BackgroundColor="#B73058" CornerRadius="20"
                         HorizontalOptions="Center" VerticalOptions="EndAndExpand"
-                            Clicked="Cadastrar"/>
+                            Clicked="Cadastrar" x:Name="btnCadastrar"/>
                 </StackLayout>
 
             </StackLayout>

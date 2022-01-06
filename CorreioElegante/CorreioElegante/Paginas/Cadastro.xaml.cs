@@ -20,29 +20,89 @@ namespace CorreioElegante.Paginas
         };
         public List<int> carrinho = new List<int>();
         public string mensagem;
+        public int selecionados=0;
         public Cadastro()
         {
             InitializeComponent();
+            btnCadastrar.IsEnabled = false;
             mensagem = entryMensagem.Text;
         }
+
+        private void btnEnabled()
+        {
+            if(selecionados > 0)
+            {
+                btnCadastrar.IsEnabled = true;
+            }
+            else
+            {
+                btnCadastrar.IsEnabled = false;
+            }
+        }
+
         private void Cadastrar(object sender,EventArgs args)
         {
-            App.Current.MainPage = new TelaCarregar(entryEmail.Text,entryMensagem.Text,carrinho);
+            if (string.IsNullOrEmpty(entryNome.Text))
+            {
+                App.Current.MainPage = new TelaCarregar(entryEmail.Text, entryMensagem.Text, carrinho,"Admirador Secreto");
+            }
+            else
+            {
+                App.Current.MainPage = new TelaCarregar(entryEmail.Text, entryMensagem.Text, carrinho, entryNome.Text);
+            }
         }
         private void img1Change(object sender,EventArgs args)
         {
-            carrinho.Add(0);
-            img1.BackgroundColor = Color.FromHex("#bdbdbd");
+            if(img1.BackgroundColor == Color.FromHex("#bdbdbd"))
+            {
+                img1.BackgroundColor = Color.FromHex("#dcdcdc");
+                carrinho.Remove(0);
+                selecionados--;
+                btnEnabled();
+            }
+            else
+            {
+                carrinho.Add(0);
+                selecionados++;
+                img1.BackgroundColor = Color.FromHex("#bdbdbd");
+                btnEnabled();
+            }
         }
         private void img2Change(object sender, EventArgs args)
         {
-            carrinho.Add(1);
-            img2.BackgroundColor = Color.FromHex("#bdbdbd");
+            if (img2.BackgroundColor == Color.FromHex("#bdbdbd"))
+            {
+                img2.BackgroundColor = Color.FromHex("#dcdcdc");
+                selecionados--;
+                carrinho.Remove(1);
+                btnEnabled();
+
+            }
+            else
+            {
+                carrinho.Add(1);
+                selecionados++;
+                img2.BackgroundColor = Color.FromHex("#bdbdbd");
+                btnEnabled();
+            }
         }
         private void img3Change(object sender, EventArgs args)
         {
-            carrinho.Add(2);
-            img3.BackgroundColor = Color.FromHex("#bdbdbd");
+            if (img3.BackgroundColor == Color.FromHex("#bdbdbd"))
+            {
+                img3.BackgroundColor = Color.FromHex("#dcdcdc");
+                carrinho.Remove(2);
+                selecionados--;
+                btnEnabled();
+
+            }
+            else
+            {
+                carrinho.Add(2);
+                selecionados++;
+                img3.BackgroundColor = Color.FromHex("#bdbdbd");
+                btnEnabled();
+            }
         }
     }
 }
